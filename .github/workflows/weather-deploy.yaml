@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: nginx-weather
-        image: rnlgud123/weater:01
+        image: rnlgud123/weather:01
         ports:
         - containerPort: 80
         command: ["/bin/sh", "-ec", "while :; do echo '.'; sleep 5 ; done"]
