@@ -16,4 +16,4 @@ RUN npm install
 COPY . /usr/local/apache2/htdocs
 
 EXPOSE 8080
-CMD [ "node", "weather.js" ]
+CMD [ "node", "server.js" ]
