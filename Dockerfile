@@ -1,4 +1,4 @@
-FROM node:15.12.0-alpine3.12
+FROM httpd:alpine
 
 # 앱 디렉터리 생성
 WORKDIR /usr/src/app
@@ -13,7 +13,7 @@ RUN npm install
 # RUN npm ci --only=production
 
 # 앱 소스 추가
-COPY . .
+COPY . /usr/local/apache2/htdocs
 
 EXPOSE 8080
-CMD [ "node", "server.js" ]
+CMD [ "node", "weather.js" ]
