@@ -3,11 +3,11 @@ kind: Service
 metadata:
   name: weather-service
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: nginx-for-svc2
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 8080
+    nodePort: 30000
 
