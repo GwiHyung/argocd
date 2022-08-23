@@ -1,20 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: guestbook-ui
+  name: nginx-weather
+  labels:
+    app: nginx-for-svc2
+  # annotations:
+    # kubernetes.io/change-cause: version 1.10.1
 spec:
-  replicas: 3
-  revisionHistoryLimit: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: guestbook-ui
+      app: nginx-for-svc2
   template:
     metadata:
       labels:
-        app: guestbook-ui
+        app: nginx-for-svc2
     spec:
       containers:
-      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
-        name: guestbook-ui
+      - name: nginx-weather
+        image: rnlgud123/weather:01
         ports:
         - containerPort: 80
+
